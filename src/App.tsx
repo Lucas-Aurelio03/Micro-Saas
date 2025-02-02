@@ -120,6 +120,18 @@ function App() {
             />
           </div>
 
+          <div className="mb-6">
+            <label htmlFor="email" className="block text-gray-700 font-bold mb-2">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Digite seu e-mail"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300"
+              required
+            />
+          </div>
+
           <div>
             <label className="flex items-center text-gray-700 text-sm font-medium mb-2">
               <GraduationCap className="w-4 h-4 mr-2" />
@@ -173,6 +185,8 @@ function App() {
               <option value="XXG">XGG</option>
             </select>
           </div>
+
+         
 
           <button
             type="submit"
