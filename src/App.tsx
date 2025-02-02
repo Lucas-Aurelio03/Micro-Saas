@@ -151,7 +151,7 @@ function App() {
           <div>
             <label className="flex items-center text-gray-700 text-sm font-medium mb-2">
               <MapPin className="w-4 h-4 mr-2" />
-              Polo
+              Polod
             </label>
             <input
               type="text"
