@@ -41,7 +41,7 @@ function App() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
         <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">Pagamento via PIXxx</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-2">Pagamento via PIX</h2>
             <p className="text-gray-600">Escaneie o QR Code ou copie o código PIX abaixo</p>
           </div>
 
@@ -115,6 +115,11 @@ function App() {
               required
               value={formData.numeroCelular}
               onChange={handleChange}
+              onKeyPress={(event) => {
+                if (!/[0-9]/.test(event.key)) {
+                  event.preventDefault();
+                }
+              }}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
               placeholder="(00) 00000-0000"
             />
@@ -151,17 +156,31 @@ function App() {
           <div>
             <label className="flex items-center text-gray-700 text-sm font-medium mb-2">
               <MapPin className="w-4 h-4 mr-2" />
-              Polod
+              Polo
             </label>
-            <input
-              type="text"
+            <select
               name="polo"
               required
               value={formData.polo}
               onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              placeholder="Digite o polo de ensino"
-            />
+            >
+              <option value="" disabled>Selecione o polo de ensino</option>
+              <option value="polo1">Campo Grande</option>
+              <option value="polo2">Nova Iguaçu</option>
+              <option value="polo3">Caxias</option>
+              <option value="polo4">Bangu</option>
+              <option value="polo5">Vasconcelos</option>
+              <option value="polo6">Anil</option>
+              <option value="polo7">Freguesia</option>
+              <option value="polo8">CDD</option>
+              <option value="polo9">Taquara</option>
+              <option value="polo10">Madureira</option>
+              <option value="polo11">Barra da tijuca</option>
+              <option value="polo12">Pechincha</option>
+              <option value="polo13">Fluzão</option>
+              {/* Adicione mais opções conforme necessário */}
+            </select>
           </div>
 
           <div>
